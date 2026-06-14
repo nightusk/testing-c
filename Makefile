@@ -1,7 +1,11 @@
-.PHONY: all clean go-test nim-test rust-test zig-test
+.PHONY: all clean d-test go-test nim-test rust-test zig-test
 
-all: go-test nim-test rust-test zig-test
+all: d-test go-test nim-test rust-test zig-test
 	@echo "--- Tests in all language completed ---"
+
+d-test:
+	@echo "--- Running D tests ---"
+	dub test
 
 go-test:
 	@echo "--- Running Go tests ---"

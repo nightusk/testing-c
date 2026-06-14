@@ -1,0 +1,11 @@
+name "testing-c"
+description "test c in d"
+authors "nightusk"
+copyright "Copyright © 2026, nightusk"
+license "MIT"
+
+sourcePaths "d"
+cSourcePaths "c"
+importPaths "d"
+importPaths "c"
+targetPath ".dub/target"
