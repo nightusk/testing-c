@@ -1,6 +1,15 @@
-.PHONY: all clean d-test go-test nim-test rust-test zig-test
+LANG := \
+	d \
+	go \
+	nim \
+	rust \
+	zig \
 
-all: d-test go-test nim-test rust-test zig-test
+TARGETS := $(addsuffix -test,$(LANG))
+
+.PHONY: all clean $(TARGETS)
+
+all: $(TARGETS)
 	@echo "--- Tests in all language completed ---"
 
 d-test:
