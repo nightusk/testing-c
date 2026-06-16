@@ -1,6 +1,7 @@
 LANG := \
 	d \
 	go \
+	lisp \
 	nim \
 	python \
 	rust \
@@ -26,6 +27,13 @@ d-test:
 go-test:
 	@echo "--- Running Go tests ---"
 	go test ./...
+
+lisp-test: c/lib.so
+	@echo "--- Running Common Lisp tests ---"
+	sbcl --noinform --non-interactive \
+	  --eval "(require 'asdf)" \
+	  --eval "(push (uiop:getcwd) asdf:*central-registry*)" \
+	  --eval "(asdf:test-system :testing-c/test)"
 
 nim-test:
 	@echo "--- Running Nim tests ---"
