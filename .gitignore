@@ -1,3 +1,6 @@
 .dub
+*.o
+__pycache__
+*.so
 target
 .zig-cache
