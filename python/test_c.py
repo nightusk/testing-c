@@ -1,10 +1,13 @@
-import ctypes
+from cffi import FFI
 import os
 import unittest
 
-clib = ctypes.CDLL(os.path.abspath(os.path.join(os.path.dirname(__file__), "../c/lib.so")))
-clib.fibonacci.argtypes = [ctypes.c_uint8]
-clib.fibonacci.restype = ctypes.c_uint64
+ffi = FFI()
+ffi.cdef("""
+      uint64_t fibonacci(uint8_t n);
+""")
+
+clib = ffi.dlopen("c/lib.so")
 
 class TestFibonacci(unittest.TestCase):
     def test_fibonacci(self):
