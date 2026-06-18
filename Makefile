@@ -1,6 +1,7 @@
 LANG := \
 	d \
 	go \
+	haskell \
 	lisp \
 	nim \
 	python \
@@ -27,6 +28,10 @@ d-test:
 go-test:
 	@echo "--- Running Go tests ---"
 	go test ./...
+
+haskell-test:
+	@echo "--- Running Haskell tests ---"
+	cabal test
 
 lisp-test: c/lib.so
 	@echo "--- Running Common Lisp tests ---"

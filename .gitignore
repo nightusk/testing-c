@@ -1,3 +1,4 @@
+dist-newstyle
 .dub
 *.o
 __pycache__
