@@ -1,5 +1,6 @@
 LANG := \
 	d \
+	erlang \
 	go \
 	haskell \
 	lisp \
@@ -24,6 +25,10 @@ c/lib.so: c/lib.o
 d-test:
 	@echo "--- Running D tests ---"
 	dub test
+
+erlang-test:
+	@echo "--- Running Erlang tests ---"
+	rebar3 eunit
 
 go-test:
 	@echo "--- Running Go tests ---"
