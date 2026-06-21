@@ -9,6 +9,8 @@ static ERL_NIF_TERM nif_fibonacci(ErlNifEnv *env, int argc,
   uint32_t n;
   if (!enif_get_uint(env, argv[0], &n))
     return enif_make_badarg(env);
+  if (n > UINT8_MAX)
+    return enif_make_badarg(env);
 
   return enif_make_uint64(env, fibonacci((uint8_t)n));
 }
@@ -17,4 +19,4 @@ static ErlNifFunc nif_funcs[] = {
     {"fibonacci", 1, nif_fibonacci},
 };
 
-ERL_NIF_INIT(test, nif_funcs, NULL, NULL, NULL, NULL)
+ERL_NIF_INIT(c, nif_funcs, NULL, NULL, NULL, NULL)

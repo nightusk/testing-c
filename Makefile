@@ -29,6 +29,7 @@ d-test:
 erlang-test:
 	@echo "--- Running Erlang tests ---"
 	rebar3 eunit
+	rebar3 proper
 
 go-test:
 	@echo "--- Running Go tests ---"
