@@ -6,6 +6,7 @@ LANG := \
 	lisp \
 	nim \
 	python \
+	ruby \
 	rust \
 	zig \
 
@@ -53,6 +54,10 @@ nim-test:
 python-test: c/lib.so
 	@echo "--- Running Python tests ---"
 	uv run python -m unittest discover -s python
+
+ruby-test: c/lib.so
+	@echo "--- Running Ruby tests ---"
+	bundle exec rspec
 
 rust-test:
 	@echo "--- Running Rust tests ---"

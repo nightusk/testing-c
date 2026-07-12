@@ -98,6 +98,20 @@ nimble test
 python -m unittest discover -s python
 ```
 
+## Ruby
+
+### directory
+- Gemfile.lock
+- Gemfile
+- .rspec
+- ruby
+  - test.rb
+
+### test runner
+```sh
+bundle exec rspec
+```
+
 ## Rust
 
 ### directory
