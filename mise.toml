@@ -1,0 +1,17 @@
+[settings]
+lockfile = true
+minimum_release_age = "3mo"
+
+[settings.ruby]
+compile = false
+
+[tools]
+erlang = "latest"
+go = "latest"
+ldc = "latest"
+python = "latest"
+rebar = { version = "latest", asset_pattern = "rebar3" }
+ruby = "latest"
+rust = "stable"
+uv = "latest"
+zig = "latest"
